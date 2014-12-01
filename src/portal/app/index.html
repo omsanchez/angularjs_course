@@ -17,7 +17,7 @@
  <input type="text" ng-model="taskFilter">
 
   <ul>
-    <li ng-repeat="task in tasks | filter:taskFilter">
+    <li ng-repeat="task in tasks | filter:taskFilter | orderBy:'user.name' | limitTo:2">
       <span>{{ task.code + ' - ' + task.description }}</span>
       <p>Asignado a: {{ task.user.name + " " + task.user.lastname }}</p>
       <p>Estatus: {{ task.status }}</p>
