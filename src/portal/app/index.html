@@ -14,9 +14,10 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
  
+ <input type="text" ng-model="taskFilter">
 
   <ul>
-    <li ng-repeat="task in tasks">
+    <li ng-repeat="task in tasks | filter:taskFilter">
       <span>{{ task.code + ' - ' + task.description }}</span>
       <p>Asignado a: {{ task.user.name + " " + task.user.lastname }}</p>
       <p>Estatus: {{ task.status }}</p>
