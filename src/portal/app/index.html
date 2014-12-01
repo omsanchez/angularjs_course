@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Hello World with AngularJS</title>
+  <title>Templates</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/app.css"/>
@@ -15,8 +15,31 @@
   <![endif]-->
 
 
-  <p><strong>Hola mundo</strong> </p>
-  <p>Bienvenido al curso de {{ 'AngularJS ' + 'y WebAPI del LAPEM' }}</p>
+  <ul>
+    <li>
+      <span>TSK01 - Implementar la notificación de la creación de una borrador de reporte de falla</span>
+      <p>
+         Asignado a: Beatriz Torres
+      </p>
+      <p>Estatus: Planeada</p>
+    </li>
+    <li>
+      <span>TSK02 - Agregar la unidad de medida del número de parte </span>
+      <p>
+         Asignado a: Alonso Roque
+      </p>
+      <p>Estatus: En proceso</p>
+    </li>
+    <li>
+      <span>TSK03 - Implementar Envio de Cotización por parte del proveedor<span>
+      <p>
+         Asignado a: Oscar Sánchez
+      </p>
+      <p>Estatus: Completada</p>
+    </li>
+  </ul>
+
+  <p>Total de tareas: 3</p>
 
   <script src="js/angular.js"></script>
 </body>
