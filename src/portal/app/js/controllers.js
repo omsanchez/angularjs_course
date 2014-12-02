@@ -8,7 +8,10 @@ angular.module('taskApp.controllers', [])
 	
 })
 
-.controller('TaskCtrl', function($scope){
+.controller('TaskCtrl', function($scope, $location, toaster){
+
+	$scope.statusFilter = "Todas";
+
 	$scope.tasks = [
 		{
 			'code': 'TSK01',
@@ -38,4 +41,18 @@ angular.module('taskApp.controllers', [])
 			'status': 'Completada'
 		}
 	];
+
+	var editedTask = {
+		'description': '',
+		'assigned': {
+			'id': '',
+			'name': ''
+		}
+	};
+
+	$scope.addTask = function(){
+		toaster.pop('success', "Tarea creada", "La tarea ha sido creada correctamente");
+		$location.path( "/taskList" );
+	}
+
 })

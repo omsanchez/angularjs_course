@@ -1,3 +1,5 @@
-<span> {{ task.code }} - {{ task.description }} </span> 
-<p> Asignado a: {{ task.user.name + task.user.lastname }}</p>
-<p> Estatus: {{ task.status }} </p>
+<span> {{ task.code }} - {{ task.description }} </span> <br />
+<i class="fa fa-user"></i><span> Asignado a todos: {{ task.user.name + task.user.lastname }} </span> <br />
+<i class="fa fa-flag"></i><span> <span> Estatus: {{ task.status }}</span> <br />
+<a href="">Ver detalles</a>
+<hr />

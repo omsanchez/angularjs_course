@@ -1,17 +1,28 @@
 <div ng-controller="TaskCtrl">
 
-  <select name="statusSelect" id="statusSelect" ng-model="statusFilter">
+  <select name="statusSelect" id="statusSelect" ng-model="statusFilter" class="form-control">
     <option value="Todas">Todas</option>
     <option value="Planeada">Planeada</option>
     <option value="En proceso">En proceso</option>
     <option value="Completada">Completada</option>
   </select>
 
-  <ul>
-    <li task-item ng-repeat="task in tasks | withStatus:statusFilter | orderBy:'code' | limitTo:5">
-    </li>  
-  </ul>
-
-  <p>Total de tareas: {{ tasks.length }}</p>
-
+  <br />
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="pull-right">
+        <a ui-sref="taskCreate" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i></a>        
+      </div>      
+      Lista de tareas
+      <br />
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <tbody>
+          <tr task-item ng-repeat="task in tasks | withStatus:statusFilter | orderBy:'code' | limitTo:5"></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel-footer">Total de tareas: {{ tasks.length }}</div>
+  </div>
 </div>

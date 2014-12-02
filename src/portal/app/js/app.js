@@ -2,10 +2,10 @@
 
 angular.module('taskApp', [
 	'ui.router',
-  'taskApp.controllers',
-  'taskApp.filters',
-  'taskApp.directives'
-
+	'taskApp.controllers',
+	'taskApp.filters',
+	'taskApp.directives',
+	'toaster'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
 	
@@ -16,6 +16,10 @@ angular.module('taskApp', [
 		.state('taskList' , {
 			url:'/taskList',
 			templateUrl: 'partials/tasklist.html'
+		})
+		.state('taskCreate' , {
+			url:'/taskCreate',
+			templateUrl: 'partials/taskcreate.html'
 		})
 		.state('userList' , {
 			url:'/userList',

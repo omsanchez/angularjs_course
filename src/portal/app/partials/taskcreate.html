@@ -1,0 +1,19 @@
+<div ng-controller="TaskCtrl">
+
+<form novalidate name="taskForm" class="css-form form" role="form" ng-submit="addTask(taskForm.$valid)">
+  <div class="form-group">
+    <label>Description</label>
+    <input type="text" class="form-control" placeholder="Descripción" ng-model="editedTask.description" required >
+  </div>
+  <div class="form-group">
+    <label>Asignado a</label>
+    <select class="form-control" ng-model="editedTask.assigned.id">
+      <option value="1">Alonso Roque</option>
+      <option value="2">Beatriz Torres</option>
+      <option value="3">Oscar Sánchez</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-success" ng-disabled="taskForm.$invalid">Agregar tarea</button>  
+  <a ui-sref="taskList">Cancelar</a>
+</form>
+</div>
