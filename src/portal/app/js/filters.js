@@ -5,7 +5,10 @@
 angular.module('taskApp.filters', [])
 .filter('withStatus', function() {
     return function(tasks, status) {
-    	//return tasks;
+    	
+    	if (status == "Todas")
+    		return tasks;
+
     	var withStatus = [];
 		for(var i=0; i<tasks.length; i++){
 		 	var task = tasks[i];

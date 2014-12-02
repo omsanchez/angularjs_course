@@ -1,1 +1,3 @@
-<span> Hola </span> 
+<span> {{ task.code }} - {{ task.description }} </span> 
+<p> Asignado a: {{ task.user.name + task.user.lastname }}</p>
+<p> Estatus: {{ task.status }} </p>
