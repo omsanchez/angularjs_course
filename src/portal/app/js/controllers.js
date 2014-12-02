@@ -3,6 +3,11 @@
 /* Controllers */
 
 angular.module('taskApp.controllers', [])
+
+.controller('AppCtrl', function(){
+	
+})
+
 .controller('TaskCtrl', function($scope){
 	$scope.tasks = [
 		{
