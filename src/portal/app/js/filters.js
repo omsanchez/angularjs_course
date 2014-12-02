@@ -2,9 +2,17 @@
 
 /* Filters */
 
-angular.module('myApp.filters', []).
-  filter('interpolate', ['version', function(version) {
-    return function(text) {
-      return String(text).replace(/\%VERSION\%/mg, version);
+angular.module('taskApp.filters', [])
+.filter('withStatus', function() {
+    return function(tasks, status) {
+    	//return tasks;
+    	var withStatus = [];
+		for(var i=0; i<tasks.length; i++){
+		 	var task = tasks[i];
+		 	if (task.status == status){
+		 		withStatus.push(task)
+		 	}
+		}
+		return withStatus;
     };
-  }]);
+});
