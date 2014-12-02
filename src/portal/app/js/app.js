@@ -2,5 +2,6 @@
 
 angular.module('taskApp', [
   'taskApp.controllers',
-  'taskApp.filters'
+  'taskApp.filters',
+  'taskApp.directives',
 ]);

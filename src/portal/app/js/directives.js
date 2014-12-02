@@ -3,9 +3,10 @@
 /* Directives */
 
 
-angular.module('myApp.directives', []).
-  directive('appVersion', ['version', function(version) {
-    return function(scope, elm, attrs) {
-      elm.text(version);
-    };
-  }]);
+angular.module('taskApp.directives', [])
+.directive('taskItem',  function() {
+	return {
+		restrict: 'AC',
+	  template: '<span> {{ task.code }} - {{ task.description }} </span> <p> Asignado a {{ task.user.name }} {{task.user.lastname }} </p> <p> Estatus: {{ task.status }} </p> '
+	};
+});
