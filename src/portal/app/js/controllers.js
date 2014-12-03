@@ -8,39 +8,11 @@ angular.module('taskApp.controllers', [])
 	
 })
 
-.controller('TaskCtrl', function($scope, $location, toaster){
+.controller('TaskCtrl', function($scope, $location, toaster, $http, $q){
 
 	$scope.statusFilter = "Todas";
 
-	$scope.tasks = [
-		{
-			'code': 'TSK01',
-			'description' : 'Implementar la notificación de la creación de una borrador de reporte de falla',
-			'user' : {
-				'name': 'Beatriz',
-				'lastname': 'Torres' 
-			},
-			'status': 'Planeada'
-		},
-		{
-			'code': 'TSK02',
-			'description' : 'Agregar la unidad de medida del número de parte',
-			'user' : {
-				'name': 'Alonso',
-				'lastname': 'Roque' 
-			},
-			'status': 'En proceso'
-		},
-		{
-			'code': 'TSK03',
-			'description' : 'Implementar Envio de Cotización por parte del proveedor',
-			'user' : {
-				'name': 'Oscar',
-				'lastname': 'Sánchez' 
-			},
-			'status': 'Completada'
-		}
-	];
+	$scope.loadingData = false;
 
 	var editedTask = {
 		'description': '',
@@ -55,4 +27,21 @@ angular.module('taskApp.controllers', [])
 		$location.path( "/taskList" );
 	}
 
+	function loadTask(){
+		$scope.loadingData = true;
+		var defer = $q.defer();
+		$http
+		.get('http://localhost:12547/api/Tasks')
+		.success(function(data, status, headers, config){
+			$scope.tasks = data;
+			$scope.loadingData = false;
+		})
+		.error(function(){
+			$scope.loadingData = false;
+			console.log("Error...")
+		})
+
+	};
+
+	loadTask();
 })

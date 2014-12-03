@@ -13,7 +13,7 @@
       <div class="pull-right">
         <a ui-sref="taskCreate" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i></a>        
       </div>      
-      Lista de tareas
+      <span> Lista de tareas</span>
       <br />
     </div>
     <div class="panel-body">
@@ -23,6 +23,6 @@
         </tbody>
       </table>
     </div>
-    <div class="panel-footer">Total de tareas: {{ tasks.length }}</div>
+    <div class="panel-footer">Total de tareas: {{ tasks.length }}  <i ng-show="loadingData" class="fa fa-spinner fa-spin"></i> </div>
   </div>
 </div>
