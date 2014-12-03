@@ -24,4 +24,9 @@ angular.module('taskApp', [
 		.state('userList' , {
 			url:'/userList',
 			templateUrl: 'partials/userlist.html'
-		})})
+		})
+		.state('userCreate' , {
+			url:'/userCreate',
+			templateUrl: 'partials/usercreate.html'
+		})
+	})
