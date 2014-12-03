@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ImproveIT.AngularJSCourse.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -25,6 +26,17 @@ namespace ImproveIT.AngularJSCourse.WebAPI.Controllers
             var task02 = new { id = 2, code = "TSK02", description = "Agregar la unidad de medida del número de parte", status = "En proceso", user = user02 };
             var task03 = new { id = 3, code = "TSK03", description = "Implementar Envio de Cotización por parte del proveedor", status = "Completada", user = user03 };
             return new List<object>() { task01, task02, task03 }.ToArray();
+        }
+
+        //Post api/task
+        public void Post(object task)
+        {
+            dynamic dTask = task;
+            var description = dTask.Description;
+            var userId = dTask.UserId;
+            Task newTask = new Task();
+            newTask.Description = description;
+            newTask.User.Id = userId;
         }
     }
 }

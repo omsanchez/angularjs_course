@@ -23,8 +23,19 @@ angular.module('taskApp.controllers', [])
 	};
 
 	$scope.addTask = function(){
-		toaster.pop('success', "Tarea creada", "La tarea ha sido creada correctamente");
-		$location.path( "/taskList" );
+		console.log($scope.editedTask);
+		$http
+		.post('http://localhost:12547/api/Tasks', { 'Description':$scope.editedTask.description, 'UserId': $scope.editedTask.assigned.id })
+		.success(function(data, status, headers, config){
+			toaster.pop('success', "Tarea creada", "La tarea ha sido creada correctamente");
+			$location.path( "/taskList" );
+			$scope.loadingData = false;
+		})
+		.error(function(){
+			$scope.loadingData = false;
+			console.log("Error...")
+		})
+
 	}
 
 	function loadTask(){

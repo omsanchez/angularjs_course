@@ -300,6 +300,12 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImproveIT.AngularJSCourse.Domain\ImproveIT.AngularJSCourse.Domain.csproj">
+      <Project>{8caa2482-fdd5-445c-8c2d-15fbf051fa44}</Project>
+      <Name>ImproveIT.AngularJSCourse.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
