@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ImproveIT.AngularJSCourse.Data;
+using NHibernate;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,6 +16,9 @@ namespace ImproveIT.AngularJSCourse.WebAPI
 
     public class WebApiApplication : System.Web.HttpApplication
     {
+
+        public static ISessionFactory SessionFactory = DataContextBuilder.BuildNHibernateSessionFactory("web");
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -23,5 +28,23 @@ namespace ImproveIT.AngularJSCourse.WebAPI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        public WebApiApplication()
+        {
+            this.BeginRequest += WebApiApplication_BeginRequest;
+            this.EndRequest += WebApiApplication_EndRequest;
+        }
+
+        void WebApiApplication_BeginRequest(object sender, EventArgs e)
+        {
+            var session = WebApiApplication.SessionFactory.OpenSession();
+            NHibernate.Context.CurrentSessionContext.Bind(session);
+        }
+
+        void WebApiApplication_EndRequest(object sender, EventArgs e)
+        {
+            var session = NHibernate.Context.CurrentSessionContext.Unbind(WebApiApplication.SessionFactory);
+        }
+
     }
 }

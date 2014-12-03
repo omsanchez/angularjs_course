@@ -44,6 +44,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.4.0.1.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -301,9 +304,17 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ImproveIT.AngularJSCourse.Data\ImproveIT.AngularJSCourse.Data.csproj">
+      <Project>{5717cd5b-90d3-4b15-b59d-8e425b1c7ed5}</Project>
+      <Name>ImproveIT.AngularJSCourse.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ImproveIT.AngularJSCourse.Domain\ImproveIT.AngularJSCourse.Domain.csproj">
       <Project>{8caa2482-fdd5-445c-8c2d-15fbf051fa44}</Project>
       <Name>ImproveIT.AngularJSCourse.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImproveIT.Data\ImproveIT.Data.csproj">
+      <Project>{002ad00f-b86c-47d1-a490-dd6502a2dbc5}</Project>
+      <Name>ImproveIT.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

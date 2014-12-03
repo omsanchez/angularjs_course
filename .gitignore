@@ -68,3 +68,6 @@
 /src/webapi/packages/Microsoft.AspNet.WebApi.WebHost.5.2.2
 /src/webapi/packages/Newtonsoft.Json.6.0.4
 /src/webapi/ImproveIT.AngularJSCourse.Domain/ImproveIT.AngularJSCourse.Domain.csproj.user
+/src/webapi/ImproveIT.AngularJSCourse.Data/ImproveIT.AngularJSCourse.Data.csproj.user
+/src/webapi/packages/NHibernate.4.0.2.4000/ConfigurationTemplates
+/src/webapi/packages/NHibernate.4.0.2.4000
