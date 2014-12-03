@@ -1,4 +1,5 @@
 ﻿using ImproveIT.AngularJSCourse.Domain;
+using ImproveIT.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace ImproveIT.AngularJSCourse.WebAPI.Controllers
     /// </summary>
     public class TasksController : ApiController
     {
+
+        internal IDataContext DataContext { get; set; }
 
         //GET api/task
         public IList<object> Get()
@@ -37,6 +40,15 @@ namespace ImproveIT.AngularJSCourse.WebAPI.Controllers
             Task newTask = new Task();
             newTask.Description = description;
             newTask.User.Id = userId;
+        }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="dataContext"></param>
+        public TasksController(IDataContext dataContext)
+        {
+            this.DataContext = dataContext;
         }
     }
 }

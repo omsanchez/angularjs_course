@@ -71,3 +71,9 @@
 /src/webapi/ImproveIT.AngularJSCourse.Data/ImproveIT.AngularJSCourse.Data.csproj.user
 /src/webapi/packages/NHibernate.4.0.2.4000/ConfigurationTemplates
 /src/webapi/packages/NHibernate.4.0.2.4000
+/src/webapi/packages/Ninject.3.2.0.0
+/src/webapi/packages/Ninject.Web.Common.3.2.0.0
+/src/webapi/packages/Ninject.Web.Common.WebHost.3.2.3.0/Content/App_Start
+/src/webapi/packages/Ninject.Web.Common.WebHost.3.2.3.0
+/src/webapi/packages/Ninject.Web.WebApi.3.2.3.0
+/src/webapi/packages/WebActivatorEx.2.0
